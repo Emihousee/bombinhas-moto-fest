@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bombinhas Moto Fest — Road &amp; Rock | 16 e 17 de outubro de 2026</title>
+<meta name="description" content="Encontro Sul-Americano de Motociclistas em Bombinhas/SC. Motos, rock e uma causa real: 100% da bilheteria para a AMA — Associação de Pais e Amigos do Autista de Bombinhas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,500&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon-dark:#161311;
+    --maroon:#3d1017;
+    --maroon-light:#5A1620;
+    --bg:#0f0d0c;
+    --gold:#E4C377;
+    --gold-deep:#C9962C;
+    --cream:#F2E8D5;
+    --cream-dim:#C9C4BC;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', Arial, sans-serif;
+    background:var(--bg);
+    color:var(--cream);
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Playfair Display', Georgia, serif;}
+  .kicker{
+    font-family:'Oswald', sans-serif;
+    letter-spacing:4px;
+    font-size:12.5px;
+    font-weight:600;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 28px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'Oswald', sans-serif; letter-spacing:1.5px; text-transform:uppercase;
+    font-size:13.5px; font-weight:600;
+    padding:16px 32px; border-radius:2px; cursor:pointer; border:1.5px solid transparent;
+    transition:all .25s ease;
+  }
+  .btn-gold{background:var(--gold); color:#241a08;}
+  .btn-gold:hover{background:#f0d18f; transform:translateY(-2px); box-shadow:0 10px 26px rgba(228,195,119,.28);}
+  .btn-outline{border-color:rgba(242,232,213,.55); color:var(--cream);}
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-2px);}
+
+  /* NAV */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    padding:18px 0;
+    transition:background .35s ease, padding .35s ease, box-shadow .35s ease;
+  }
+  header.scrolled{background:rgba(15,13,12,.94); backdrop-filter:blur(6px); padding:11px 0; box-shadow:0 6px 24px rgba(0,0,0,.35);}
+  nav.wrap{display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand img{height:58px; width:auto;}
+  .brand-txt{font-family:'Oswald', sans-serif; font-size:14px; letter-spacing:2px; line-height:1.3;}
+  .brand-txt b{display:block; color:#fff; font-size:15px;}
+  .brand-tag{display:block; color:var(--gold); font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase;}
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links a{
+    font-family:'Oswald', sans-serif; font-size:12.5px; letter-spacing:1.6px; text-transform:uppercase;
+    color:var(--cream-dim); position:relative; padding:4px 0;
+  }
+  .nav-links a:hover{color:var(--gold);}
+  .nav-cta{font-size:12px !important; padding:11px 22px !important; white-space:nowrap;}
+  .burger{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
+  .burger span{width:24px; height:2px; background:var(--cream);}
+
+  /* HERO */
+  .hero{
+    position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    text-align:center; overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute; inset:0; background-size:cover; background-position:50% 30%;
+    animation:kenburns 26s ease-in-out infinite alternate;
+  }
+  @keyframes kenburns{
+    0%{transform:scale(1) translate(0,0);}
+    100%{transform:scale(1.14) translate(-1%,-2%);}
+  }
+  .hero-overlay{
+    position:absolute; inset:0;
+    background:
+      linear-gradient(180deg, rgba(10,8,7,.55) 0%, rgba(15,13,12,.35) 32%, rgba(15,13,12,.72) 78%, var(--bg) 100%),
+      linear-gradient(90deg, rgba(10,8,7,.55) 0%, transparent 30%, transparent 70%, rgba(10,8,7,.55) 100%);
+  }
+  .hero-content{position:relative; z-index:2; padding:150px 24px 90px;}
+  .hero-emblem{height:190px; width:auto; margin:0 auto 26px; filter:drop-shadow(0 10px 24px rgba(0,0,0,.55));}
+  .hero h1{
+    font-size:clamp(42px, 8vw, 92px); color:#fff; line-height:0.98; letter-spacing:1px;
+    text-shadow:0 6px 30px rgba(0,0,0,.45);
+  }
+  .hero .accent{
+    font-style:italic; color:var(--gold); font-size:clamp(20px,3vw,30px); margin:10px 0 26px; font-weight:500;
+  }
+  .hero-meta{
+    font-family:'Oswald', sans-serif; font-size:14.5px; letter-spacing:1.5px; color:var(--cream);
+    display:flex; flex-wrap:wrap; gap:10px 18px; justify-content:center; margin-bottom:40px;
+  }
+  .hero-meta span{opacity:.55; margin-right:0;}
+
+  .countdown{display:flex; gap:22px; justify-content:center; margin-bottom:44px; flex-wrap:wrap;}
+  .cd-item{min-width:78px;}
+  .cd-num{font-family:'Playfair Display', serif; font-weight:700; font-size:38px; color:#fff; line-height:1;}
+  .cd-label{font-family:'Oswald', sans-serif; font-size:10.5px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-top:6px;}
+  .hero-ctas{display:flex; gap:18px; justify-content:center; flex-wrap:wrap;}
+  .scroll-cue{
+    position:absolute; bottom:26px; left:50%; transform:translateX(-50%); z-index:2;
+    width:26px; height:42px; border:1.5px solid rgba(242,232,213,.5); border-radius:14px;
+  }
+  .scroll-cue::before{
+    content:''; position:absolute; top:7px; left:50%; width:4px; height:8px; background:var(--gold);
+    border-radius:2px; transform:translateX(-50%); animation:scrollcue 1.8s ease infinite;
+  }
+  @keyframes scrollcue{0%{opacity:1; top:7px;} 100%{opacity:0; top:20px;}}
+
+  /* TRUST BAR */
+  .trustbar{
+    background:#141110; border-top:1px solid rgba(228,195,119,.18); border-bottom:1px solid rgba(228,195,119,.18);
+    padding:26px 0;
+  }
+  .trustbar .wrap{display:flex; align-items:center; justify-content:center; gap:56px; flex-wrap:wrap;}
+  .trust-item{display:flex; align-items:center; gap:12px;}
+  .trust-item img{height:34px; width:auto;}
+  .trust-item.ama-main img{height:46px;}
+  .trust-item .bomaqui{height:52px;}
+  .trust-item span{font-size:12.5px; color:var(--cream-dim); font-family:'Oswald',sans-serif; letter-spacing:.5px;}
+
+  /* SECTIONS */
+  section{padding:118px 0;}
+  .section-head{max-width:640px; margin:0 auto 56px; text-align:center;}
+  .section-head h2{font-size:clamp(30px,4vw,44px); color:#fff; margin-top:12px; line-height:1.15;}
+  .section-head p{color:var(--cream-dim); margin-top:16px; font-size:16px; line-height:1.6;}
+  .section-head.left{text-align:left; margin:0 0 46px;}
+
+  #evento{background:linear-gradient(180deg, var(--bg) 0%, #16110f 100%);}
+  .stat-row{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(228,195,119,.16); margin-top:64px; border:1px solid rgba(228,195,119,.16); max-width:760px; margin-left:auto; margin-right:auto;}
+  .stat{background:var(--bg); padding:34px 20px; text-align:center;}
+  .stat b{display:block; font-family:'Playfair Display',serif; font-size:34px; color:var(--gold); margin-bottom:8px;}
+  .stat span{font-size:12.5px; color:var(--cream-dim); font-family:'Oswald',sans-serif; letter-spacing:1px; text-transform:uppercase;}
+
+  #causa{background:linear-gradient(180deg,#16110f 0%, var(--maroon-dark) 40%, var(--maroon) 100%); position:relative;}
+  .causa-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;}
+  .causa-cards{display:flex; flex-direction:column; gap:16px;}
+  .ccard{
+    display:flex; gap:18px; align-items:flex-start; background:rgba(242,232,213,.05);
+    border:1px solid rgba(228,195,119,.18); padding:20px 22px; border-radius:4px;
+  }
+  .origin-block{margin-top:20px; padding:22px 26px; background:rgba(228,195,119,.07); border-left:3px solid var(--gold); border-radius:2px;}
+  .origin-block p{color:var(--cream); font-size:15px; line-height:1.7; font-style:italic; margin:0;}
+  .ccard .ic{
+    width:44px; height:44px; min-width:44px; border-radius:50%; background:var(--gold);
+    display:flex; align-items:center; justify-content:center; color:#241a08; font-size:19px;
+  }
+  .ccard h4{font-family:'Oswald',sans-serif; font-size:15px; letter-spacing:.5px; color:#fff; margin-bottom:5px;}
+  .ccard p{font-size:14px; color:var(--cream-dim); line-height:1.55;}
+  .causa-photo{position:relative; border-radius:6px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,.5);}
+  .causa-photo img{width:100%; height:100%; object-fit:cover; object-position:48% 32%;}
+  .causa-photo{aspect-ratio:5/6;}
+  .causa-badge{
+    position:absolute; top:20px; right:20px; background:rgba(242,232,213,.95); border-radius:8px;
+    padding:8px 10px; box-shadow:0 8px 20px rgba(0,0,0,.35); line-height:0;
+  }
+  .causa-badge img{height:32px; width:auto; display:block;}
+  .causa-tag{
+    position:absolute; bottom:20px; left:20px; background:rgba(15,13,12,.82); backdrop-filter:blur(4px);
+    padding:12px 18px; border-left:3px solid var(--gold); font-family:'Oswald',sans-serif; font-size:12.5px; letter-spacing:1px;
+  }
+
+  #programacao{background:var(--bg);}
+  .prog-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  .prog-day{background:#151210; border:1px solid rgba(228,195,119,.16); border-radius:6px; overflow:hidden;}
+  .prog-day-head{background:linear-gradient(120deg,var(--maroon-light),var(--maroon-dark)); padding:22px 26px;}
+  .prog-day-head .d{font-family:'Oswald',sans-serif; font-size:12px; letter-spacing:2px; color:var(--gold); text-transform:uppercase;}
+  .prog-day-head h3{color:#fff; font-size:24px; margin-top:4px;}
+  .prog-list{padding:8px 0;}
+  .prog-list li{
+    list-style:none; display:flex; gap:18px; padding:16px 26px; border-top:1px solid rgba(242,232,213,.07);
+    font-size:14.5px; align-items:baseline;
+  }
+  .prog-list li:first-child{border-top:none;}
+  .prog-list .time{font-family:'Oswald',sans-serif; color:var(--gold); font-size:13px; min-width:56px; letter-spacing:.5px;}
+  .prog-list .desc b{display:block; color:#fff; font-size:15px; margin-bottom:2px;}
+  .prog-list .desc span{color:var(--cream-dim); font-size:13px;}
+  .prog-note{text-align:center; font-size:12.5px; color:var(--cream-dim); font-style:italic; margin-top:26px;}
+  .prog-day-note{font-size:12px; color:var(--gold); padding:14px 24px 0; opacity:.85;}
+  .ig-link{display:flex; align-items:center; justify-content:center; margin:16px auto 0;}
+  .ig-link svg{width:26px; height:26px; transition:transform .25s ease, opacity .25s ease;}
+  .ig-link:hover svg{transform:translateY(-2px); opacity:.8;}
+
+  #zoeira{
+    background:linear-gradient(180deg, var(--bg), #171412);
+    text-align:center;
+  }
+  #zoeira img{height:150px; margin:0 auto 30px;}
+  #zoeira h2{font-size:clamp(28px,4vw,40px); color:#fff;}
+  #zoeira p{max-width:600px; margin:18px auto 0; color:var(--cream-dim); font-size:16px; line-height:1.65;}
+
+  #apoie{background:#141110; border-top:1px solid rgba(228,195,119,.1);}
+  .cotas-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:16px;}
+  .cota{
+    background:rgba(242,232,213,.04); border:1px solid rgba(228,195,119,.2); border-radius:6px;
+    padding:30px 20px; text-align:center; display:flex; flex-direction:column; gap:14px;
+    transition:transform .25s ease, border-color .25s ease;
+  }
+  .cota:hover{transform:translateY(-8px); border-color:var(--gold);}
+  .cota.destaque{background:linear-gradient(160deg, rgba(228,195,119,.14), rgba(228,195,119,.03)); border-color:var(--gold);}
+  .cota .tag{font-family:'Oswald',sans-serif; font-size:10.5px; letter-spacing:2px; color:var(--gold); text-transform:uppercase; background:rgba(228,195,119,.12); padding:4px 10px; border-radius:20px; align-self:center;}
+  .cota h4{font-family:'Playfair Display',serif; font-size:21px; color:#fff; margin-top:4px;}
+  .cota .price{font-family:'Oswald',sans-serif; font-size:13.5px; color:var(--gold); font-weight:600; line-height:1.4; letter-spacing:.3px;}
+  .cota .price small{font-size:11px; color:var(--cream-dim); font-weight:400; display:block; margin-top:2px;}
+  .cotas-cta{text-align:center; margin-top:46px;}
+  .cotas-cta p{color:var(--cream-dim); margin-bottom:20px; font-size:14.5px;}
+
+  #ingressos{background:var(--bg);}
+  .ingressos-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; max-width:620px; margin:0 auto;}
+  .ingressos-grid .tkt-price{font-family:'Oswald',sans-serif; font-size:19px; color:var(--gold); font-weight:600;}
+  .ing-cta{text-align:center; margin-top:40px;}
+  .ing-cta .btn[disabled]{opacity:.5; pointer-events:none; cursor:not-allowed;}
+  .ing-note{color:var(--cream-dim); font-size:13.5px; margin-top:14px;}
+
+  #video{background:#0f0d0c;}
+  .video-block{
+    position:relative; border-radius:8px; overflow:hidden; aspect-ratio:21/9;
+    box-shadow:0 30px 70px rgba(0,0,0,.55); background-size:cover; background-position:50% 25%;
+  }
+  .video-dark{position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,8,7,.15), rgba(10,8,7,.7)); pointer-events:none;}
+  .video-el{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
+  .video-caption{position:absolute; left:28px; bottom:24px; z-index:2; font-family:'Oswald',sans-serif;}
+  .video-caption .tagx{font-size:11px; letter-spacing:2px; color:var(--gold); text-transform:uppercase; background:rgba(15,13,12,.7); padding:5px 10px; display:inline-block; margin-bottom:8px;}
+  .video-caption h3{font-family:'Playfair Display',serif; font-size:26px; color:#fff;}
+
+  #local{background:linear-gradient(180deg,#0f0d0c, #161311);}
+  .local-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;}
+  .local-info p{color:var(--cream-dim); font-size:15.5px; line-height:1.7; margin-bottom:22px;}
+  .local-list{list-style:none;}
+  .local-list li{display:flex; gap:14px; padding:12px 0; border-top:1px solid rgba(242,232,213,.08); font-size:14.5px;}
+  .local-list li:first-child{border-top:none;}
+  .local-list b{color:#fff; display:block; font-size:13px; font-family:'Oswald',sans-serif; letter-spacing:.5px;}
+  .map-frame{border-radius:6px; overflow:hidden; border:1px solid rgba(228,195,119,.2); aspect-ratio:4/3; filter:grayscale(.25) contrast(1.05);}
+  .map-frame iframe{width:100%; height:100%; border:0;}
+
+  #contato{
+    background:linear-gradient(180deg, #161311, var(--maroon-dark) 50%, var(--maroon-light));
+    text-align:center;
+  }
+  #contato .section-head p{color:var(--cream-dim);}
+  .contact-cards{display:grid; grid-template-columns:1fr 1fr; gap:22px; max-width:760px; margin:0 auto 34px;}
+  .ccontact{background:rgba(15,13,12,.35); border:1px solid rgba(228,195,119,.22); border-radius:6px; padding:28px 24px;}
+  .ccontact .who{font-family:'Oswald',sans-serif; font-size:12px; letter-spacing:1.5px; color:var(--gold); text-transform:uppercase; margin-bottom:8px;}
+  .ccontact .name{font-family:'Playfair Display',serif; font-size:20px; color:#fff; margin-bottom:14px;}
+  .kit-note{color:var(--cream-dim); font-size:13.5px; margin-top:30px;}
+
+  footer{background:#0a0908; padding:56px 0 26px; border-top:1px solid rgba(228,195,119,.14);}
+  .foot-top{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:30px; margin-bottom:40px;}
+  .foot-logos{display:flex; align-items:center; gap:28px; flex-wrap:wrap;}
+  .foot-logos img{height:36px; width:auto; opacity:.85;}
+  .foot-logos .bomaqui{height:52px;}
+  .foot-social{display:flex; gap:14px;}
+  .foot-social a{
+    width:38px; height:38px; border:1px solid rgba(242,232,213,.28); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:15px; color:var(--cream-dim);
+  }
+  .foot-social a:hover{border-color:var(--gold); color:var(--gold);}
+  .foot-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    padding-top:26px; border-top:1px solid rgba(242,232,213,.08);
+    font-size:12.5px; color:rgba(242,232,213,.4); font-family:'Oswald',sans-serif; letter-spacing:.5px;
+  }
+
+  .devnote{
+    background:#F2E8D5; color:#5A4A20; font-family:'Inter',Arial,sans-serif; font-size:13px;
+    padding:14px 24px; text-align:center; border-bottom:1px solid #C9962C; position:relative; z-index:200;
+  }
+  .devnote b{color:#3d2c0a;}
+
+  @media (max-width:880px){
+    .nav-links{position:fixed; top:0; right:0; height:100vh; width:78%; max-width:320px;
+      background:rgba(15,13,12,.98); flex-direction:column; justify-content:center; align-items:flex-start;
+      padding:0 40px; gap:26px; transform:translateX(100%); transition:transform .35s ease;}
+    .nav-links.open{transform:translateX(0);}
+    .burger{display:flex;}
+    .nav-cta{display:none !important;}
+    .causa-grid, .prog-grid, .local-grid{grid-template-columns:1fr;}
+    .causa-photo{order:-1;}
+    .stat-row{grid-template-columns:repeat(2,1fr);}
+    .cotas-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-cards{grid-template-columns:1fr;}
+    section{padding:80px 0;}
+  }
+  @media (max-width:520px){
+    .cotas-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="devnote">🏍️ <b>Modelo de site</b> — versão inicial para validação de conteúdo, estrutura e identidade visual. Vídeos, fotos e datas de programação marcados como placeholder serão substituídos pelo material real do evento.</div>
+
+<header id="siteHeader">
+  <nav class="wrap">
+    <div class="brand">
+      <img src="assets/emblem.webp" alt="Bombinhas Moto Fest">
+      <div class="brand-txt"><b>BOMBINHAS MOTO FEST</b><span class="brand-tag">Encontro Sul-Americano</span></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#evento">O Evento</a>
+      <a href="#causa">A Causa</a>
+      <a href="#programacao">Programação</a>
+      <a href="#ingressos">Ingressos</a>
+      <a href="#local">Local</a>
+      <a href="#apoie">Apoie</a>
+      <a href="#ingressos" class="btn btn-gold nav-cta">Comprar Ingresso</a>
+    </div>
+    <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero" id="topo">
+  <div class="hero-bg" style="background-image:url('assets/hero.webp');"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content wrap">
+    <img class="hero-emblem" src="assets/emblem.webp" alt="Bombinhas Moto Fest">
+    <div class="kicker">Encontro Sul-Americano de Motociclistas</div>
+    <h1>BOMBINHAS<br>MOTO FEST</h1>
+    <div class="accent">Road &amp; Rock</div>
+    <div class="hero-meta">
+      <span>16 e 17 de outubro de 2026</span><span>·</span>
+      <span>Bora Bora Beach Club</span><span>·</span>
+      <span>Bombinhas / SC</span>
+    </div>
+    <div class="countdown" id="countdown">
+      <div class="cd-item"><div class="cd-num" id="cd-days">00</div><div class="cd-label">Dias</div></div>
+      <div class="cd-item"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">Horas</div></div>
+      <div class="cd-item"><div class="cd-num" id="cd-min">00</div><div class="cd-label">Min</div></div>
+      <div class="cd-item"><div class="cd-num" id="cd-sec">00</div><div class="cd-label">Seg</div></div>
+    </div>
+    <div class="hero-ctas">
+      <a href="#ingressos" class="btn btn-gold">Garanta seu Ingresso</a>
+      <a href="#programacao" class="btn btn-outline">Ver Programação</a>
+    </div>
+  </div>
+  <div class="scroll-cue"></div>
+</section>
+
+<div class="trustbar">
+  <div class="wrap">
+    <div class="trust-item ama-main"><img src="assets/ama.webp" alt="AMA Bombinhas"><span>Organização: AMA — Associação de Pais e Amigos<br>do Autista de Bombinhas</span></div>
+    <div class="trust-item"><img src="assets/prefeitura.webp" alt="Prefeitura de Bombinhas"><span>Apoio institucional</span></div>
+    <div class="trust-item"><img class="bomaqui" src="assets/bomaqui.webp" alt="Bombinhas — Bom é Aqui!"></div>
+  </div>
+</div>
+
+<section id="evento">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">O Evento</div>
+      <h2>Motos, rock e uma causa real, à beira-mar</h2>
+      <p>O Bombinhas Moto Fest reúne motociclistas de toda a região Sul-Americana, shows de rock e gastronomia à beira-mar em um evento fechado, num dos points mais procurados de Bombinhas: o Bora Bora Beach Club. Ambiente família, com o compromisso "Zoeira? Tô Fora!" — sem manobras perigosas.</p>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><b>2</b><span>Dias de evento</span></div>
+      <div class="stat"><b>4</b><span>Shows ao vivo</span></div>
+      <div class="stat"><b>100%</b><span>Da bilheteria para a AMA</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="causa">
+  <div class="wrap">
+    <div class="causa-grid">
+      <div>
+        <div class="section-head left">
+          <div class="kicker">A Causa</div>
+          <h2>Por trás da festa,<br>uma causa que fica</h2>
+          <p>100% da bilheteria é revertida à AMA — Associação de Pais e Amigos do Autista de Bombinhas. A sede atual está superlotada: parte da arrecadação financia a montagem de um novo espaço de atendimento.</p>
+        </div>
+        <div class="causa-cards">
+          <div class="ccard"><div class="ic">◎</div><div><h4>Sala Sensorial</h4><p>Coluna de água luminosa, piscina de bolinhas terapêutica, painéis táteis e balanço terapêutico — trabalham autorregulação e propriocepção.</p></div></div>
+          <div class="ccard"><div class="ic">♪</div><div><h4>Sala de Musicoterapia</h4><p>Revestimento acústico profissional, instrumentos de percussão e tapete musical — para exploração de som, ritmo e expressão emocional.</p></div></div>
+          <div class="ccard"><div class="ic">⚑</div><div><h4>Área Externa</h4><p>Circuito psicomotor, piso emborrachado de alta impactação e estrutura de teto retrátil — para atividades ao ar livre em qualquer clima.</p></div></div>
+        </div>
+        <div class="origin-block">
+          <p>O Bombinhas Moto Fest nasceu de uma história pessoal. Jair Fabiano Bastantão é motociclista, viajante de estrada — e pai de uma menina acolhida pela AMA. Foi ele quem uniu essas duas paixões, moto e causa, para transformar um encontro de motociclistas em apoio real para outras famílias como a dele.</p>
+        </div>
+      </div>
+      <div class="causa-photo">
+        <img src="assets/causa-photo.webp" alt="Pai e filha motociclistas — a força por trás da causa">
+        <div class="causa-badge"><img src="assets/ama.webp" alt="AMA Bombinhas"></div>
+        <div class="causa-tag">Cada ingresso vendido é apoio direto a essa causa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="programacao">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Programação</div>
+      <h2>Dois dias de Road &amp; Rock</h2>
+      <p>Shows confirmados para sexta e sábado — e um passeio de motos de bônus no domingo, sem custo adicional.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-day">
+        <div class="prog-day-head"><div class="d">Sexta · 16/10</div><h3>Abertura</h3></div>
+        <ul class="prog-list">
+          <li><span class="time">19h</span><div class="desc"><b>Abertura oficial</b><span>Sem credenciamento prévio</span></div></li>
+          <li><span class="time">21h</span><div class="desc"><b>Show Nacional</b><span>Palco principal · atração revelada em breve</span></div></li>
+        </ul>
+      </div>
+      <div class="prog-day">
+        <div class="prog-day-head"><div class="d">Sábado · 17/10</div><h3>Dia de Shows</h3></div>
+        <ul class="prog-list">
+          <li><span class="time">11h</span><div class="desc"><b>Show Nacional</b><span>Palco principal · atração revelada em breve</span></div></li>
+          <li><span class="time">15h</span><div class="desc"><b>Show Nacional</b><span>Palco principal · atração revelada em breve</span></div></li>
+          <li><span class="time">18h</span><div class="desc"><b>Show Nacional</b><span>Palco principal · atração revelada em breve</span></div></li>
+        </ul>
+        <p class="prog-day-note">+ DJ ao longo do dia</p>
+      </div>
+      <div class="prog-day">
+        <div class="prog-day-head"><div class="d">Domingo · 18/10 · Bônus</div><h3>Rota Turística de Bombinhas</h3></div>
+        <ul class="prog-list">
+          <li><span class="time">A definir</span><div class="desc"><b>Passeio de motos pela cidade</b><span>Concentração no Bora Bora · roteiro pelos points turísticos de Bombinhas, com paradas para fotos</span></div></li>
+        </ul>
+      </div>
+    </div>
+    <p class="prog-note">* O evento oficial é sexta e sábado (16 e 17/10). A Rota Turística de domingo (18/10) é uma atividade bônus, sem custo adicional, com roteiro e horário a confirmar.</p>
+    <p class="prog-note">🎸 Line-up sendo revelado aos poucos no Instagram <a href="https://www.instagram.com/bombinhasmotofest" target="_blank" rel="noopener" style="color:var(--gold); font-style:normal;">@bombinhasmotofest</a> — acompanhe.</p>
+    <a class="ig-link" href="https://www.instagram.com/bombinhasmotofest" target="_blank" rel="noopener" aria-label="Instagram do Bombinhas Moto Fest">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="var(--gold)" stroke-width="1.6"/>
+        <circle cx="12" cy="12" r="4.6" stroke="var(--gold)" stroke-width="1.6"/>
+        <circle cx="17.4" cy="6.6" r="1.15" fill="var(--gold)"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<section id="ingressos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Ingressos</div>
+      <h2>Garanta o seu</h2>
+      <p>Motociclista não paga ingresso — basta chegar de moto. Para o público em geral, os ingressos são vendidos pela Sympla, com 100% do valor revertido para a AMA.</p>
+    </div>
+    <div class="ingressos-grid">
+      <div class="cota"><h4>1 dia</h4><div class="tkt-price">R$ 50</div></div>
+      <div class="cota destaque"><span class="tag">2 dias</span><h4>Sexta + Sábado</h4><div class="tkt-price">R$ 80</div></div>
+    </div>
+    <div class="ing-cta">
+      <a href="#" class="btn btn-gold" disabled>Comprar na Sympla</a>
+      <p class="ing-note">Link de compra em ativação — atualizado assim que publicado pela AMA. Motociclistas: não pagam ingresso, apresentação da moto na entrada.</p>
+    </div>
+  </div>
+</section>
+
+<section id="zoeira">
+  <div class="wrap">
+    <img src="assets/zoeira.webp" alt="Selo Zoeira? Tô Fora!">
+    <div class="kicker">Compromisso</div>
+    <h2>Zoeira? Tô Fora!</h2>
+    <p>Evento pensado para casais e famílias: sem manobras perigosas, com respeito e segurança do início ao fim. Um encontro de motociclistas que celebra a estrada com responsabilidade.</p>
+  </div>
+</section>
+
+<section id="video">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Bastidores</div>
+      <h2>Sinta a energia do encontro</h2>
+    </div>
+    <div class="video-block">
+      <video class="video-el" autoplay muted loop playsinline preload="auto" poster="assets/teaser-poster.webp">
+        <source src="assets/teaser.webm" type="video/webm">
+        <source src="assets/teaser.mp4" type="video/mp4">
+      </video>
+      <div class="video-dark"></div>
+      <div class="video-caption">
+        <span class="tagx">Teaser oficial</span>
+        <h3>Bombinhas Moto Fest — Road &amp; Rock</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="local">
+  <div class="wrap">
+    <div class="local-grid">
+      <div class="local-info">
+        <div class="section-head left">
+          <div class="kicker">Onde</div>
+          <h2>Bora Bora Beach Club</h2>
+        </div>
+        <p>Um dos points mais procurados de Bombinhas, à beira-mar — estrutura completa para receber motociclistas e público em um evento fechado e exclusivo.</p>
+        <ul class="local-list">
+          <li><div><b>Local</b>Bora Bora Beach Club — Bombinhas/SC</div></li>
+          <li><div><b>Data</b>16 e 17 de outubro de 2026</div></li>
+          <li><div><b>Rota Turística</b>Domingo, 18/10 — bônus, horário a definir</div></li>
+          <li><div><b>Acesso</b>Evento fechado, somente com ingresso</div></li>
+          <li><div><b>Motociclistas</b>Não pagam ingresso</div></li>
+        </ul>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=Bora+Bora+Beach+Club+Bombinhas+SC&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="apoie">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Apoie o evento</div>
+      <h2>Quer apoiar como patrocinador?</h2>
+      <p>Exposição em telão de LED, redes sociais oficiais, estande no evento e presença nas peças de divulgação — conforme a cota escolhida.</p>
+    </div>
+    <div class="cotas-grid">
+      <div class="cota destaque"><span class="tag">Principal</span><h4>Diamante</h4><div class="price">Bangalô exclusivo à beira da piscina</div></div>
+      <div class="cota"><h4>Ouro</h4><div class="price">Destaque no palco e telão</div></div>
+      <div class="cota"><h4>Prata</h4><div class="price">Box de expositor no evento</div></div>
+      <div class="cota"><h4>Bronze</h4><div class="price">Logo no painel de patrocinadores</div></div>
+      <div class="cota"><h4>Apoiador</h4><div class="price">Presença nas redes sociais</div></div>
+    </div>
+    <div class="cotas-cta">
+      <p>100% do valor arrecadado é revertido à AMA. Detalhes e valores de cada cota no Kit de Mídia completo.</p>
+      <a href="#contato" class="btn btn-outline">Quero Apoiar</a>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Vamos conversar?</div>
+      <h2>Fale com a gente</h2>
+      <p>Dúvidas sobre o evento, ingressos, a causa da AMA ou parcerias — qualquer um dos contatos abaixo pode te ajudar.</p>
+    </div>
+    <div class="contact-cards">
+      <div class="ccontact">
+        <div class="who">AMA Bombinhas</div>
+        <div class="name">(47) 99709-3543</div>
+        <a class="btn btn-gold" style="width:100%; justify-content:center;" href="https://wa.me/5547997093543" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
+      <div class="ccontact">
+        <div class="who">Jair Fabiano Bastantão</div>
+        <div class="name">(47) 9961-9100</div>
+        <a class="btn btn-gold" style="width:100%; justify-content:center;" href="https://wa.me/554799619100" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
+    </div>
+    <p class="kit-note">Kit de Mídia, Termo de Patrocínio e Cota Diamante disponíveis sob solicitação.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-logos">
+        <img src="assets/ama.webp" alt="AMA Bombinhas">
+        <img src="assets/prefeitura.webp" alt="Prefeitura de Bombinhas">
+        <img class="bomaqui" src="assets/bomaqui.webp" alt="Bombinhas Bom é Aqui">
+      </div>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/bombinhasmotofest" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Bombinhas Moto Fest — Road &amp; Rock. Todos os direitos reservados.</span>
+      <span>Desenvolvido por Adrenalize</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // header scroll state
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // mobile nav
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // countdown
+  const target = new Date('2026-10-16T19:00:00-03:00').getTime();
+  function tick(){
+    const now = Date.now();
+    let diff = Math.max(0, target - now);
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-min').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-sec').textContent = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+</script>
+
+</body>
+</html>
