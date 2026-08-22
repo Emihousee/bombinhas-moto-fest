@@ -230,7 +230,7 @@
     border:1.5px solid var(--gold); border-radius:10px; padding:26px 34px;
     display:flex; align-items:center; justify-content:center; gap:24px;
   }
-  .moto-free-icon{font-size:46px; line-height:1; flex-shrink:0;}
+  .moto-free-icon{width:52px; height:52px; flex-shrink:0;}
   .moto-free-text{text-align:left; line-height:1;}
   .moto-free-big{font-family:'Playfair Display',serif; font-style:italic; font-weight:700; font-size:38px; color:var(--gold);}
   .moto-free-label{font-family:'Oswald',sans-serif; font-size:12.5px; letter-spacing:3px; text-transform:uppercase; color:#fff; margin-top:6px;}
@@ -254,6 +254,22 @@
   .video-caption{position:absolute; left:28px; bottom:24px; z-index:2; font-family:'Oswald',sans-serif;}
   .video-caption .tagx{font-size:11px; letter-spacing:2px; color:var(--gold); text-transform:uppercase; background:rgba(15,13,12,.7); padding:5px 10px; display:inline-block; margin-bottom:8px;}
   .video-caption h3{font-family:'Playfair Display',serif; font-size:26px; color:#fff;}
+  .sound-toggle{
+    position:absolute; right:20px; bottom:20px; z-index:3; width:44px; height:44px; border-radius:50%;
+    background:rgba(15,13,12,.72); border:1.4px solid rgba(228,195,119,.55);
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .sound-toggle:hover{border-color:var(--gold); background:rgba(15,13,12,.9);}
+  .sound-toggle svg{width:20px; height:20px;}
+  .sound-toggle .icon-off{display:block;}
+  .sound-toggle .icon-on{display:none;}
+  .sound-toggle.unmuted .icon-off{display:none;}
+  .sound-toggle.unmuted .icon-on{display:block;}
+  @media (max-width:560px){
+    .sound-toggle{right:14px; bottom:14px; width:38px; height:38px;}
+    .sound-toggle svg{width:17px; height:17px;}
+  }
 
   #local{background:linear-gradient(180deg,#0f0d0c, #161311);}
   .local-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;}
@@ -461,7 +477,12 @@
       <p>Para o público em geral, os ingressos são vendidos pela Sympla, com 100% do valor revertido para a AMA.</p>
     </div>
     <div class="moto-free">
-      <span class="moto-free-icon" aria-hidden="true">🏍️</span>
+      <svg class="moto-free-icon" viewBox="0 0 24 24" fill="none" stroke="#E4C377" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M2 16a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+        <path d="M16 16a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+        <path d="M7.5 14h5l4 -4h-10.5m1.5 4l4 -4" />
+        <path d="M13 6h2l1.5 3l2 4" />
+      </svg>
       <div class="moto-free-text">
         <div class="moto-free-big">Grátis</div>
         <div class="moto-free-label">Para motociclistas</div>
@@ -494,7 +515,7 @@
       <h2>Sinta a energia do encontro</h2>
     </div>
     <div class="video-block">
-      <video class="video-el" autoplay muted loop playsinline preload="auto" poster="assets/teaser-poster.webp">
+      <video id="teaserVideo" class="video-el" autoplay muted loop playsinline preload="auto" poster="assets/teaser-poster.webp">
         <source src="assets/teaser.mp4" type="video/mp4">
       </video>
       <div class="video-dark"></div>
@@ -502,6 +523,18 @@
         <span class="tagx">Teaser oficial</span>
         <h3>Bombinhas Moto Fest — Road &amp; Rock</h3>
       </div>
+      <button id="soundToggle" class="sound-toggle" type="button" aria-label="Ativar som do vídeo" aria-pressed="false">
+        <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="#F2E8D5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="4 9 8 9 12 5 12 19 8 15 4 15" fill="#F2E8D5" stroke="none"/>
+          <line x1="16" y1="9" x2="22" y2="15"/>
+          <line x1="22" y1="9" x2="16" y2="15"/>
+        </svg>
+        <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="#F2E8D5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="4 9 8 9 12 5 12 19 8 15 4 15" fill="#F2E8D5" stroke="none"/>
+          <path d="M15.5 8.5a5 5 0 0 1 0 7"/>
+          <path d="M18 6a9 9 0 0 1 0 12"/>
+        </svg>
+      </button>
     </div>
   </div>
 </section>
@@ -607,6 +640,20 @@
   const navLinks = document.getElementById('navLinks');
   burger.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // teaser video sound toggle
+  const teaserVideo = document.getElementById('teaserVideo');
+  const soundToggle = document.getElementById('soundToggle');
+  if (teaserVideo && soundToggle) {
+    soundToggle.addEventListener('click', () => {
+      teaserVideo.muted = !teaserVideo.muted;
+      if (!teaserVideo.muted) { teaserVideo.play().catch(() => {}); }
+      const unmuted = !teaserVideo.muted;
+      soundToggle.classList.toggle('unmuted', unmuted);
+      soundToggle.setAttribute('aria-pressed', String(unmuted));
+      soundToggle.setAttribute('aria-label', unmuted ? 'Silenciar vídeo' : 'Ativar som do vídeo');
+    });
+  }
 
   // countdown
   const target = new Date('2026-10-16T19:00:00-03:00').getTime();
