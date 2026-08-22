@@ -225,18 +225,19 @@
 
   #ingressos{background:var(--bg);}
   .moto-free{
-    max-width:640px; margin:0 auto 30px; text-align:center; position:relative;
+    max-width:560px; margin:0 auto 30px; position:relative;
     background:linear-gradient(160deg, rgba(228,195,119,.20), rgba(228,195,119,.05));
-    border:1.5px solid var(--gold); border-radius:10px; padding:32px 28px;
+    border:1.5px solid var(--gold); border-radius:10px; padding:26px 34px;
+    display:flex; align-items:center; justify-content:center; gap:24px;
   }
-  .moto-free-tag{
-    font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:2px; font-weight:600;
-    color:var(--maroon-dark); text-transform:uppercase; background:var(--gold);
-    padding:6px 14px; border-radius:20px; display:inline-block; margin-bottom:14px;
+  .moto-free-icon{font-size:46px; line-height:1; flex-shrink:0;}
+  .moto-free-text{text-align:left; line-height:1;}
+  .moto-free-big{font-family:'Playfair Display',serif; font-style:italic; font-weight:700; font-size:38px; color:var(--gold);}
+  .moto-free-label{font-family:'Oswald',sans-serif; font-size:12.5px; letter-spacing:3px; text-transform:uppercase; color:#fff; margin-top:6px;}
+  @media (max-width:560px){
+    .moto-free{flex-direction:column; text-align:center; gap:14px; padding:26px 24px;}
+    .moto-free-text{text-align:center;}
   }
-  .moto-free h3{font-family:'Playfair Display',serif; font-size:30px; color:#fff; margin-bottom:10px;}
-  .moto-free h3 b{color:var(--gold); font-style:italic;}
-  .moto-free p{color:var(--cream-dim); font-size:14.5px; max-width:480px; margin:0 auto;}
   .ingressos-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; max-width:620px; margin:0 auto;}
   .ingressos-grid .tkt-price{font-family:'Oswald',sans-serif; font-size:19px; color:var(--gold); font-weight:600;}
   .ing-cta{text-align:center; margin-top:40px;}
@@ -460,9 +461,11 @@
       <p>Para o público em geral, os ingressos são vendidos pela Sympla, com 100% do valor revertido para a AMA.</p>
     </div>
     <div class="moto-free">
-      <span class="moto-free-tag">🏍️ Exigência oficial da organização</span>
-      <h3>Motociclista <b>não paga</b> ingresso</h3>
-      <p>Chegou de moto, entrou de graça — basta apresentar a moto na entrada. Vale para os dois dias de evento, sem exceção.</p>
+      <span class="moto-free-icon" aria-hidden="true">🏍️</span>
+      <div class="moto-free-text">
+        <div class="moto-free-big">Grátis</div>
+        <div class="moto-free-label">Para motociclistas</div>
+      </div>
     </div>
     <div class="ingressos-grid">
       <div class="cota"><h4>1 dia</h4><div class="tkt-price">R$ 50</div></div>
