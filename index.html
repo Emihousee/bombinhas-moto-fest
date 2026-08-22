@@ -224,6 +224,19 @@
   .cotas-cta p{color:var(--cream-dim); margin-bottom:20px; font-size:14.5px;}
 
   #ingressos{background:var(--bg);}
+  .moto-free{
+    max-width:640px; margin:0 auto 30px; text-align:center; position:relative;
+    background:linear-gradient(160deg, rgba(228,195,119,.20), rgba(228,195,119,.05));
+    border:1.5px solid var(--gold); border-radius:10px; padding:32px 28px;
+  }
+  .moto-free-tag{
+    font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:2px; font-weight:600;
+    color:var(--maroon-dark); text-transform:uppercase; background:var(--gold);
+    padding:6px 14px; border-radius:20px; display:inline-block; margin-bottom:14px;
+  }
+  .moto-free h3{font-family:'Playfair Display',serif; font-size:30px; color:#fff; margin-bottom:10px;}
+  .moto-free h3 b{color:var(--gold); font-style:italic;}
+  .moto-free p{color:var(--cream-dim); font-size:14.5px; max-width:480px; margin:0 auto;}
   .ingressos-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; max-width:620px; margin:0 auto;}
   .ingressos-grid .tkt-price{font-family:'Oswald',sans-serif; font-size:19px; color:var(--gold); font-weight:600;}
   .ing-cta{text-align:center; margin-top:40px;}
@@ -279,12 +292,6 @@
     font-size:12.5px; color:rgba(242,232,213,.4); font-family:'Oswald',sans-serif; letter-spacing:.5px;
   }
 
-  .devnote{
-    background:#F2E8D5; color:#5A4A20; font-family:'Inter',Arial,sans-serif; font-size:13px;
-    padding:14px 24px; text-align:center; border-bottom:1px solid #C9962C; position:relative; z-index:200;
-  }
-  .devnote b{color:#3d2c0a;}
-
   @media (max-width:880px){
     .nav-links{position:fixed; top:0; right:0; height:100vh; width:78%; max-width:320px;
       background:rgba(15,13,12,.98); flex-direction:column; justify-content:center; align-items:flex-start;
@@ -305,8 +312,6 @@
 </style>
 </head>
 <body>
-
-<div class="devnote">🏍️ <b>Modelo de site</b> — versão inicial para validação de conteúdo, estrutura e identidade visual. Vídeos, fotos e datas de programação marcados como placeholder serão substituídos pelo material real do evento.</div>
 
 <header id="siteHeader">
   <nav class="wrap">
@@ -452,7 +457,12 @@
     <div class="section-head">
       <div class="kicker">Ingressos</div>
       <h2>Garanta o seu</h2>
-      <p>Motociclista não paga ingresso — basta chegar de moto. Para o público em geral, os ingressos são vendidos pela Sympla, com 100% do valor revertido para a AMA.</p>
+      <p>Para o público em geral, os ingressos são vendidos pela Sympla, com 100% do valor revertido para a AMA.</p>
+    </div>
+    <div class="moto-free">
+      <span class="moto-free-tag">🏍️ Exigência oficial da organização</span>
+      <h3>Motociclista <b>não paga</b> ingresso</h3>
+      <p>Chegou de moto, entrou de graça — basta apresentar a moto na entrada. Vale para os dois dias de evento, sem exceção.</p>
     </div>
     <div class="ingressos-grid">
       <div class="cota"><h4>1 dia</h4><div class="tkt-price">R$ 50</div></div>
@@ -460,7 +470,7 @@
     </div>
     <div class="ing-cta">
       <a href="#" class="btn btn-gold" disabled>Comprar na Sympla</a>
-      <p class="ing-note">Link de compra em ativação — atualizado assim que publicado pela AMA. Motociclistas: não pagam ingresso, apresentação da moto na entrada.</p>
+      <p class="ing-note">Link de compra em ativação — atualizado assim que publicado pela AMA. Valor válido apenas para o público em geral; motociclistas não pagam.</p>
     </div>
   </div>
 </section>
@@ -482,7 +492,6 @@
     </div>
     <div class="video-block">
       <video class="video-el" autoplay muted loop playsinline preload="auto" poster="assets/teaser-poster.webp">
-        <source src="assets/teaser.webm" type="video/webm">
         <source src="assets/teaser.mp4" type="video/mp4">
       </video>
       <div class="video-dark"></div>
